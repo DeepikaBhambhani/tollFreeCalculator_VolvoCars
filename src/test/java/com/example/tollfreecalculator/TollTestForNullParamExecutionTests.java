@@ -29,7 +29,7 @@ public class TollTestForNullParamExecutionTests {
 
     @BeforeAll
     private static void initDate() {
-        date = LocalDate.of(2021, 12, 17);
+        date = LocalDate.of(2022, 8, 17);
         car = new Car();
     }
 
