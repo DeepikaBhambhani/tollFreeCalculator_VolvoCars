@@ -5,3 +5,4 @@ Code Test of TietoEvery
 3. Test cases using jupiter junit
 4. MVC architecture
 5. Used method references and lambda expressions
+6. Used Lombok for getter setter methods
