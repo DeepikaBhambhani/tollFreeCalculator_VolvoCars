@@ -1,4 +1,4 @@
-package com.example.tollfreecalculatordeepika.util;
+package com.example.tollfreecalculator.util;
 
 public class Constants {
 

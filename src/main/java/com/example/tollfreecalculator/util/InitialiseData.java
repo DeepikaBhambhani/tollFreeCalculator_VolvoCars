@@ -1,10 +1,8 @@
-package com.example.tollfreecalculatordeepika.util;
+package com.example.tollfreecalculator.util;
 
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.time.LocalDate;
@@ -14,7 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.example.tollfreecalculatordeepika.util.Constants.TIME_FEE_TO_PAY_YML;
+import static com.example.tollfreecalculator.util.Constants.TIME_FEE_TO_PAY_YML;
 
 public class InitialiseData {
     public static final Map<LocalDate,Boolean> holidayMap=new HashMap<>();
@@ -64,7 +62,7 @@ public class InitialiseData {
 
             list.getTimeFeeList()
                     .stream()
-                    .map(timeFeeObj -> timeFeeToDto(timeFeeObj))
+                    .map(timeFeeObj -> timeFeeToData(timeFeeObj))
                     .forEach(timeFeeList::add);
         } catch (IOException e) {
             e.printStackTrace();
@@ -72,7 +70,7 @@ public class InitialiseData {
         }
     }
 
-    public static TimeIntervalFee timeFeeToDto(TimeIntervalFeeList.TimeFeeObj timeFeeObj) {
+    public static TimeIntervalFee timeFeeToData(TimeIntervalFeeList.TimeFeeObj timeFeeObj) {
         return new TimeIntervalFee()
                 .setStartTime(LocalTime.parse(timeFeeObj.getStart()))
                 .setEndTime(LocalTime.parse(timeFeeObj.getEnd()))

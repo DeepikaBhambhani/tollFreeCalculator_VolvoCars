@@ -1,4 +1,6 @@
-package com.example.tollfreecalculatordeepika.bean;
+package com.example.tollfreecalculator.model;
+
+
 
 public interface Vehicle {
     String getVehicle();

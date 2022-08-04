@@ -1,8 +1,8 @@
-package com.example.tollfreecalculatordeepika.implementation;
+package com.example.tollfreecalculator.controller;
 
-import com.example.tollfreecalculatordeepika.bean.Vehicle;
-import com.example.tollfreecalculatordeepika.service.VehicleTollService;
-import com.example.tollfreecalculatordeepika.util.TimeIntervalFee;
+import com.example.tollfreecalculator.model.Vehicle;
+import com.example.tollfreecalculator.util.TimeIntervalFee;
+import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
 import java.time.DayOfWeek;
@@ -13,12 +13,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-import static com.example.tollfreecalculatordeepika.util.Constants.*;
-import static com.example.tollfreecalculatordeepika.util.Constants.DIPLOMAT;
-import static com.example.tollfreecalculatordeepika.util.InitialiseData.holidayMap;
-import static com.example.tollfreecalculatordeepika.util.InitialiseData.timeFeeList;
-
-public class VehicleTollServiceImpl implements VehicleTollService {
+import static com.example.tollfreecalculator.util.Constants.*;
+import static com.example.tollfreecalculator.util.Constants.DIPLOMAT;
+import static com.example.tollfreecalculator.util.InitialiseData.holidayMap;
+import static com.example.tollfreecalculator.util.InitialiseData.timeFeeList;
+@Service
+public class TollCalculatorServiceImpl implements TollCalculatorService {
     @Override
     public boolean isTollFreeVehicle(Vehicle vehicle) {
         if (vehicle == null) return false;
@@ -50,6 +50,7 @@ public class VehicleTollServiceImpl implements VehicleTollService {
     public boolean isValid(Vehicle vehicle, List<LocalDateTime> dates) {
 
         Optional.ofNullable(vehicle).orElseThrow(()->new RuntimeException(VEHICLE_NULL_MSG));
+
 
         if (isTollFreeVehicle(vehicle)) {
             return false;

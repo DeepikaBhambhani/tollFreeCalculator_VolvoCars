@@ -1,12 +1,12 @@
-package com.example.tollfreecalculatordeepika.service;
+package com.example.tollfreecalculator.controller;
 
-import com.example.tollfreecalculatordeepika.bean.Vehicle;
+import com.example.tollfreecalculator.model.Vehicle;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public interface VehicleTollService {
+public interface TollCalculatorService {
     boolean isTollFreeVehicle(Vehicle vehicle);
     boolean isTollFreeDate(LocalDate date);
     boolean isValid(Vehicle vehicle, List<LocalDateTime> dates);
