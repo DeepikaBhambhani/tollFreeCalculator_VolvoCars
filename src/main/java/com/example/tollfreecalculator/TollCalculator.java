@@ -19,6 +19,8 @@ public class TollCalculator {
     public TollCalculator(TollCalculatorServiceImpl tollService) {
         this.tollService = tollService;
     }
+
+    //this method calculates toll fee depending on day,time of travel and type of vehicle
     public int getTollFee(Vehicle vehicle, List<LocalDateTime> dates) {
 
         if (!tollService.isValid(vehicle, dates)) {

@@ -11,5 +11,5 @@ import java.time.LocalTime;
 public class TimeIntervalFee {
     private LocalTime startTime;
     private LocalTime endTime;
-    private double fee;
+    private double tollFee;
 }
