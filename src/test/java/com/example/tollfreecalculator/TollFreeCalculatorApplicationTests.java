@@ -42,25 +42,25 @@ class TollFreeCalculatorApplicationTests {
     public void midnightMorningZeroFeeTimeTest() {
         List<LocalDateTime> dates = new ArrayList<>();
         // early morning time
-        dates.add(LocalDateTime.of(date, LocalTime.of(0, 0))); // 0
-        dates.add(LocalDateTime.of(date, LocalTime.of(0, 59))); // 0
-        dates.add(LocalDateTime.of(date, LocalTime.of(1, 0))); // 0
-        dates.add(LocalDateTime.of(date, LocalTime.of(1, 59))); // 0
-        dates.add(LocalDateTime.of(date, LocalTime.of(2, 0))); // 0
-        dates.add(LocalDateTime.of(date, LocalTime.of(2, 59))); // 0
-        dates.add(LocalDateTime.of(date, LocalTime.of(3, 0))); // 0
-        dates.add(LocalDateTime.of(date, LocalTime.of(3, 59))); // 0
-        dates.add(LocalDateTime.of(date, LocalTime.of(4, 0))); // 0
-        dates.add(LocalDateTime.of(date, LocalTime.of(4, 59))); // 0
-        dates.add(LocalDateTime.of(date, LocalTime.of(5, 0))); // 0
-        dates.add(LocalDateTime.of(date, LocalTime.of(5, 59))); // 0
+        dates.add(LocalDateTime.of(date, LocalTime.of(0, 0)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(0, 59)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(1, 0)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(1, 59)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(2, 0)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(2, 59)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(3, 0)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(3, 59)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(4, 0)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(4, 59)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(5, 0)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(5, 59)));
         //midnight time
-        dates.add(LocalDateTime.of(date, LocalTime.of(18, 30))); // 0
-        dates.add(LocalDateTime.of(date, LocalTime.of(19, 10))); // 0
-        dates.add(LocalDateTime.of(date, LocalTime.of(20, 15))); // 0
-        dates.add(LocalDateTime.of(date, LocalTime.of(21, 20))); // 0
-        dates.add(LocalDateTime.of(date, LocalTime.of(22, 30))); // 0
-        dates.add(LocalDateTime.of(date, LocalTime.of(23, 40))); // 0
+        dates.add(LocalDateTime.of(date, LocalTime.of(18, 30)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(19, 10)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(20, 15)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(21, 20)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(22, 30)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(23, 40)));
 
         assertEquals(0, tollCalculator.getTollFee(car, dates));
     }

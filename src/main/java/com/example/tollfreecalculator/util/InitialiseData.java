@@ -77,7 +77,7 @@ public class InitialiseData {
         return new TimeIntervalFee()
                 .setStartTime(LocalTime.parse(timeFeeObj.getStart()))
                 .setEndTime(LocalTime.parse(timeFeeObj.getEnd()))
-                .setTollFee(timeFeeObj.getFee());
+                .setTollFee(timeFeeObj.getTollFee());
     }
 
 }
