@@ -33,7 +33,7 @@ public class TollCalculatorForFreeDayTests {
     }
 
     @Test
-    @DisplayName("Calculating Toll on weekends")
+    @DisplayName("Calculating Toll fee on weekends")
      public void weekendTollTest(){
         List<LocalDateTime> dates = new ArrayList<>();
         date = LocalDate.of(2022, 7, 31);

@@ -34,35 +34,34 @@ public class TollCalculatorServiceImpl implements TollCalculatorService {
 
 
     @Override
-    public boolean isTollFreeDate(LocalDate date)
-        {
-            int year = date.getYear();
+    public boolean isTollFreeDate(LocalDate date) {
+        int year = date.getYear();
 
-            if (date.getDayOfWeek() == DayOfWeek.SATURDAY || date.getDayOfWeek() == DayOfWeek.SUNDAY) {
-                return true;
-            }else {
-                holidayMap.containsKey(date);
-            }
-            return false;
+        if (date.getDayOfWeek() == DayOfWeek.SATURDAY || date.getDayOfWeek() == DayOfWeek.SUNDAY) {
+            return true;
+        } else {
+            holidayMap.containsKey(date);
         }
+        return false;
+    }
 
-        //checks null conditions and toll must be calculated of each day
+    //checks null conditions and toll must be calculated of each day
     @Override
     public boolean isValid(Vehicle vehicle, List<LocalDateTime> dates) {
 
-        Optional.ofNullable(vehicle).orElseThrow(()->new RuntimeException(VEHICLE_NULL_MSG));
+        Optional.ofNullable(vehicle).orElseThrow(() -> new RuntimeException(VEHICLE_NULL_MSG));
 
 
         if (isTollFreeVehicle(vehicle)) {
             return false;
         }
 
-        if ( dates==null || CollectionUtils.isEmpty(Arrays.asList(dates))) {
+        if (dates == null || CollectionUtils.isEmpty(Arrays.asList(dates))) {
             throw new RuntimeException(DATES_NULL_MSG);
         }
 
-        if(dates.stream().map(LocalDateTime::toLocalDate)
-                .anyMatch(date -> !date.equals(dates.get(0).toLocalDate()))){
+        if (dates.stream().map(LocalDateTime::toLocalDate)
+                .anyMatch(date -> !date.equals(dates.get(0).toLocalDate()))) {
             throw new RuntimeException(MORE_THAN_ONE_DAY_MSG);
         }
 
@@ -72,7 +71,7 @@ public class TollCalculatorServiceImpl implements TollCalculatorService {
         return true;
     }
 
-// returns toll fee of vehicles depending on day and time of travel
+    // returns toll fee of vehicles depending on day and time of travel
     public double getFee(LocalTime time) {
         return timeFeeList.stream()
                 .filter(timeFee -> isMatched(timeFee, time))

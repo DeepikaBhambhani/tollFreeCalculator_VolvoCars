@@ -15,46 +15,48 @@ import java.util.Map;
 import static com.example.tollfreecalculator.util.Constants.TIME_FEE_TO_PAY_YML;
 
 public class InitialiseData {
-    public static final Map<LocalDate,Boolean> holidayMap=new HashMap<>();
-    public static final List<TimeIntervalFee> timeFeeList=new ArrayList<>();
+    public static final Map<LocalDate, Boolean> holidayMap = new HashMap<>();
+    public static final List<TimeIntervalFee> timeFeeList = new ArrayList<>();
 
     static {
         initialiseHolidayMap();
         initTimeFeeYaml();
     }
 
-    public static void initialiseHolidayMap(){
-        int year= LocalDate.now().getYear();
+    //Creates map of holiday list
+    public static void initialiseHolidayMap() {
+        int year = LocalDate.now().getYear();
 
-        holidayMap.put(LocalDate.of(year,1,1),true);
-        holidayMap.put(LocalDate.of(year,3,28),true);
-        holidayMap.put(LocalDate.of(year,3,29),true);
+        holidayMap.put(LocalDate.of(year, 1, 1), true);
+        holidayMap.put(LocalDate.of(year, 3, 28), true);
+        holidayMap.put(LocalDate.of(year, 3, 29), true);
 
-        holidayMap.put(LocalDate.of(year,4,1),true);
-        holidayMap.put(LocalDate.of(year,4,30),true);
+        holidayMap.put(LocalDate.of(year, 4, 1), true);
+        holidayMap.put(LocalDate.of(year, 4, 30), true);
 
 
-        holidayMap.put(LocalDate.of(year,5,1),true);
-        holidayMap.put(LocalDate.of(year,5,8),true);
-        holidayMap.put(LocalDate.of(year,5,9),true);
+        holidayMap.put(LocalDate.of(year, 5, 1), true);
+        holidayMap.put(LocalDate.of(year, 5, 8), true);
+        holidayMap.put(LocalDate.of(year, 5, 9), true);
 
-        holidayMap.put(LocalDate.of(year,6,5),true);
-        holidayMap.put(LocalDate.of(year,6,6),true);
-        holidayMap.put(LocalDate.of(year,6,21),true);
+        holidayMap.put(LocalDate.of(year, 6, 5), true);
+        holidayMap.put(LocalDate.of(year, 6, 6), true);
+        holidayMap.put(LocalDate.of(year, 6, 21), true);
 
-        for(int i=1;i<=31;i++){
-            holidayMap.put(LocalDate.of(year,7,i),true);
+        for (int i = 1; i <= 31; i++) {
+            holidayMap.put(LocalDate.of(year, 7, i), true);
         }
 
 
-        holidayMap.put(LocalDate.of(year,11,1),true);
-        holidayMap.put(LocalDate.of(year,12,24),true);
-        holidayMap.put(LocalDate.of(year,12,25),true);
-        holidayMap.put(LocalDate.of(year,12,26),true);
-        holidayMap.put(LocalDate.of(year,12,31),true);
+        holidayMap.put(LocalDate.of(year, 11, 1), true);
+        holidayMap.put(LocalDate.of(year, 12, 24), true);
+        holidayMap.put(LocalDate.of(year, 12, 25), true);
+        holidayMap.put(LocalDate.of(year, 12, 26), true);
+        holidayMap.put(LocalDate.of(year, 12, 31), true);
 
     }
 
+    //retrieves data from yaml file and populates timefeeList
     public static void initTimeFeeYaml() {
 
         try (InputStream in = InitialiseData.class.getResourceAsStream(TIME_FEE_TO_PAY_YML)) {

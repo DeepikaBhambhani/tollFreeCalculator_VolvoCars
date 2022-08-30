@@ -69,15 +69,15 @@ class TollFreeCalculatorApplicationTests {
     @DisplayName("Toll test for vehicles traveling in the morning")
     public void morningRushHourTollTest() {
         List<LocalDateTime> dates = new ArrayList<>();
-        dates.add(LocalDateTime.of(date, LocalTime.of(6, 0))); // 9
-        dates.add(LocalDateTime.of(date, LocalTime.of(6, 29)));// 9
-        dates.add(LocalDateTime.of(date, LocalTime.of(6, 50)));//16
-        dates.add(LocalDateTime.of(date, LocalTime.of(7, 0)));// 22
-        dates.add(LocalDateTime.of(date, LocalTime.of(7, 59)));// 22
-        dates.add(LocalDateTime.of(date, LocalTime.of(8, 0)));// 16
-        dates.add(LocalDateTime.of(date, LocalTime.of(8, 29)));//16
-        dates.add(LocalDateTime.of(date, LocalTime.of(8, 30)));//9
-        dates.add(LocalDateTime.of(date, LocalTime.of(9, 0)));//9
+        dates.add(LocalDateTime.of(date, LocalTime.of(6, 0)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(6, 29)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(6, 50)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(7, 0)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(7, 59)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(8, 0)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(8, 29)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(8, 30)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(9, 0)));
         assertEquals(60, tollCalculator.getTollFee(car, dates));
     }
 
@@ -105,16 +105,16 @@ class TollFreeCalculatorApplicationTests {
     @DisplayName("Maximum toll calculation in one day")
     public void MaxFeeCalcTest() {
         List<LocalDateTime> dates = new ArrayList<>();
-        dates.add(LocalDateTime.of(date, LocalTime.of(6, 0)));//9
-        dates.add(LocalDateTime.of(date, LocalTime.of(11, 35)));//9
-        dates.add(LocalDateTime.of(date, LocalTime.of(12, 35)));//9
-        dates.add(LocalDateTime.of(date, LocalTime.of(14, 35)));//9
-        dates.add(LocalDateTime.of(date, LocalTime.of(15, 5)));// 16
-        dates.add(LocalDateTime.of(date, LocalTime.of(15, 30)));// 22
+        dates.add(LocalDateTime.of(date, LocalTime.of(6, 0)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(11, 35)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(12, 35)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(14, 35)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(15, 5)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(15, 30)));
 
-        dates.add(LocalDateTime.of(date, LocalTime.of(16, 0)));// 22
-        dates.add(LocalDateTime.of(date, LocalTime.of(16, 30)));// 22
-        // total 118
+        dates.add(LocalDateTime.of(date, LocalTime.of(16, 0)));
+        dates.add(LocalDateTime.of(date, LocalTime.of(16, 30)));
+
         assertEquals(MAX_FEE_FOR_ONE_DAY, tollCalculator.getTollFee(car, dates));
     }
 
