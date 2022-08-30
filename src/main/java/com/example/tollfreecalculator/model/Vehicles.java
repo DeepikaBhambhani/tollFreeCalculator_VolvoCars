@@ -2,6 +2,6 @@ package com.example.tollfreecalculator.model;
 
 
 
-public interface Vehicle {
+public interface Vehicles {
     String getVehicle();
 }

@@ -1,7 +1,7 @@
 package com.example.tollfreecalculator;
 
 import com.example.tollfreecalculator.model.Car;
-import com.example.tollfreecalculator.model.Vehicle;
+import com.example.tollfreecalculator.model.Vehicles;
 import com.example.tollfreecalculator.controller.TollCalculatorServiceImpl;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -21,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class TollTestForNullParamExecutionTests {
     private final TollCalculator tollCalculator;
     private static LocalDate date;
-    private static Vehicle car;
+    private static Vehicles car;
 
     public TollTestForNullParamExecutionTests() {
         this.tollCalculator = new TollCalculator(new TollCalculatorServiceImpl());

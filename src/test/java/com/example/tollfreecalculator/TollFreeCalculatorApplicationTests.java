@@ -2,7 +2,7 @@ package com.example.tollfreecalculator;
 
 import com.example.tollfreecalculator.controller.TollCalculatorServiceImpl;
 import com.example.tollfreecalculator.model.Car;
-import com.example.tollfreecalculator.model.Vehicle;
+import com.example.tollfreecalculator.model.Vehicles;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -23,7 +23,7 @@ class TollFreeCalculatorApplicationTests {
     private static  TollCalculator tollCalculator;
     private static LocalDate date;
 
-    private static Vehicle car;
+    private static Vehicles car;
 
     TollFreeCalculatorApplicationTests() {
         tollCalculator=new TollCalculator(new TollCalculatorServiceImpl());

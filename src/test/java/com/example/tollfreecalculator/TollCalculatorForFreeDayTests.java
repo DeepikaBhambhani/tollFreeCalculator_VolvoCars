@@ -22,7 +22,7 @@ public class TollCalculatorForFreeDayTests {
 
     private static  TollCalculator tollCalculator;
     private static LocalDate date;
-    private static Vehicle car;
+    private static Vehicles car;
 
 
     @BeforeAll
@@ -51,12 +51,12 @@ public class TollCalculatorForFreeDayTests {
         dateList.add(LocalDateTime.of(date, LocalTime.of(12,52)));
         dateList.add(LocalDateTime.of(date, LocalTime.of(13,52)));
         dateList.add(LocalDateTime.of(date, LocalTime.of(14,52)));
-        Vehicle  emergency=new Emergency();
-        Vehicle  diplomat=new Diplomat();
-        Vehicle  foreign=new Foreign();
-        Vehicle  military=new Military();
-        Vehicle  motorbike=new Motorcycle();
-        Vehicle  tractor=new Tractor();
+        Vehicles emergency=new Emergency();
+        Vehicles diplomat=new Diplomat();
+        Vehicles foreign=new Foreign();
+        Vehicles military=new Military();
+        Vehicles motorbike=new Motorcycle();
+        Vehicles tractor=new Tractor();
         assertEquals(0,  tollCalculator.getTollFee(diplomat, dateList));
         assertEquals(0,  tollCalculator.getTollFee(foreign, dateList));
         assertEquals(0,  tollCalculator.getTollFee(military, dateList));

@@ -1,6 +1,6 @@
 package com.example.tollfreecalculator;
 
-import com.example.tollfreecalculator.model.Vehicle;
+import com.example.tollfreecalculator.model.Vehicles;
 import com.example.tollfreecalculator.controller.TollCalculatorServiceImpl;
 
 import java.time.LocalDateTime;
@@ -21,9 +21,9 @@ public class TollCalculator {
     }
 
     //this method calculates toll fee depending on day,time of travel and type of vehicle
-    public int getTollFee(Vehicle vehicle, List<LocalDateTime> dates) {
+    public int getTollFee(Vehicles vehicles, List<LocalDateTime> dates) {
 
-        if (!tollService.isValid(vehicle, dates)) {
+        if (!tollService.isValid(vehicles, dates)) {
             return 0;
         }
 

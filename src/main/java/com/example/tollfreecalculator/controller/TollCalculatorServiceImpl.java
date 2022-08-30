@@ -1,6 +1,6 @@
 package com.example.tollfreecalculator.controller;
 
-import com.example.tollfreecalculator.model.Vehicle;
+import com.example.tollfreecalculator.model.Vehicles;
 import com.example.tollfreecalculator.util.TimeIntervalFee;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -20,9 +20,9 @@ import static com.example.tollfreecalculator.util.InitialiseData.timeFeeList;
 @Service
 public class TollCalculatorServiceImpl implements TollCalculatorService {
     @Override
-    public boolean isTollFreeVehicle(Vehicle vehicle) {
-        if (vehicle == null) return false;
-        String vehicleType = vehicle.getVehicle();
+    public boolean isTollFreeVehicle(Vehicles vehicles) {
+        if (vehicles == null) return false;
+        String vehicleType = vehicles.getVehicle();
         return vehicleType.equals(MOTORCYCLE) ||
                 vehicleType.equals(TRACTOR) ||
                 vehicleType.equals(MILITARY) ||
@@ -47,12 +47,12 @@ public class TollCalculatorServiceImpl implements TollCalculatorService {
 
     //checks null conditions and toll must be calculated of each day
     @Override
-    public boolean isValid(Vehicle vehicle, List<LocalDateTime> dates) {
+    public boolean isValid(Vehicles vehicles, List<LocalDateTime> dates) {
 
-        Optional.ofNullable(vehicle).orElseThrow(() -> new RuntimeException(VEHICLE_NULL_MSG));
+        Optional.ofNullable(vehicles).orElseThrow(() -> new RuntimeException(VEHICLE_NULL_MSG));
 
 
-        if (isTollFreeVehicle(vehicle)) {
+        if (isTollFreeVehicle(vehicles)) {
             return false;
         }
 
