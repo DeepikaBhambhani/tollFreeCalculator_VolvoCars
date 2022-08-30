@@ -76,7 +76,7 @@ public class TollCalculatorServiceImpl implements TollCalculatorService {
         return timeFeeList.stream()
                 .filter(timeFee -> isMatched(timeFee, time))
                 .findAny()
-                .map(TimeIntervalFee::getFee)
+                .map(TimeIntervalFee::getTollFee)
                 .orElse(0d);
     }
 

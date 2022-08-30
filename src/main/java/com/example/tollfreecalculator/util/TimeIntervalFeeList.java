@@ -11,7 +11,7 @@ public class TimeIntervalFeeList {
     public static class TimeFeeObj{
         private String start;
         private String end;
-        private Double fee;
+        private Double tollFee;
     }
 
 }
