@@ -1,6 +1,7 @@
 package com.example.tollfreecalculator.controller;
 
 import com.example.tollfreecalculator.model.Vehicle;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

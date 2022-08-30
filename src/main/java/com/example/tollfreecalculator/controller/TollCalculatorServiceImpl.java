@@ -32,6 +32,7 @@ public class TollCalculatorServiceImpl implements TollCalculatorService {
 
     }
 
+
     @Override
     public boolean isTollFreeDate(LocalDate date)
         {
@@ -45,7 +46,7 @@ public class TollCalculatorServiceImpl implements TollCalculatorService {
             return false;
         }
 
-
+        //checks null conditions and toll must be calculated of each day
     @Override
     public boolean isValid(Vehicle vehicle, List<LocalDateTime> dates) {
 
@@ -71,7 +72,7 @@ public class TollCalculatorServiceImpl implements TollCalculatorService {
         return true;
     }
 
-
+// returns toll fee of vehicles depending on day and time of travel
     public double getFee(LocalTime time) {
         return timeFeeList.stream()
                 .filter(timeFee -> isMatched(timeFee, time))
