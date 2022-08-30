@@ -2,7 +2,7 @@ package com.example.tollfreecalculator.util;
 
 public class Constants {
 
-    public static final String MOTORBIKE ="Motorbike";
+    public static final String MOTORCYCLE ="Motorcycle";
     public static final String DIPLOMAT="Diplomat";
     public static final String EMERGENCY="Emergency";
     public static final String CAR="Car";

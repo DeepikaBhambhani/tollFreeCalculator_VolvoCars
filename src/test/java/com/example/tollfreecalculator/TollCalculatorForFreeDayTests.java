@@ -14,7 +14,6 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.tollfreecalculator.util.Constants.MAX_FEE_FOR_ONE_DAY;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
@@ -56,7 +55,7 @@ public class TollCalculatorForFreeDayTests {
         Vehicle  diplomat=new Diplomat();
         Vehicle  foreign=new Foreign();
         Vehicle  military=new Military();
-        Vehicle  motorbike=new Motorbike();
+        Vehicle  motorbike=new Motorcycle();
         Vehicle  tractor=new Tractor();
         assertEquals(0,  tollCalculator.getTollFee(diplomat, dateList));
         assertEquals(0,  tollCalculator.getTollFee(foreign, dateList));
