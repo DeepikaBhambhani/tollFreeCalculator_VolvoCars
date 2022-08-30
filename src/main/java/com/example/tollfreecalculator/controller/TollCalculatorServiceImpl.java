@@ -23,7 +23,7 @@ public class TollCalculatorServiceImpl implements TollCalculatorService {
     public boolean isTollFreeVehicle(Vehicle vehicle) {
         if (vehicle == null) return false;
         String vehicleType = vehicle.getVehicle();
-        return vehicleType.equals(MOTORBIKE) ||
+        return vehicleType.equals(MOTORCYCLE) ||
                 vehicleType.equals(TRACTOR) ||
                 vehicleType.equals(MILITARY) ||
                 vehicleType.equals(FOREIGN) ||

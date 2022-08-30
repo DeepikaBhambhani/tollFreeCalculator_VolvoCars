@@ -55,7 +55,7 @@ public class TollTestForNullParamExecutionTests {
 
 
     @Test
-    @DisplayName("Multiple date test")
+    @DisplayName("Test to calculate toll of  multiple dates")
     public void differentDatesTest() {
         RuntimeException re = assertThrows(RuntimeException.class,
                 () -> tollCalculator.getTollFee(car,
